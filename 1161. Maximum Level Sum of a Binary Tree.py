@@ -27,3 +27,4 @@ class Solution:
                 maximal_value = total
             level += 1
         return maximal
+        

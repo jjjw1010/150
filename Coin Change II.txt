@@ -1,0 +1,19 @@
+class Solution:
+    def change(self, amount: int, coins: List[int]) -> int:
+        cache = [0 for _ in range(amount + 1)]
+        cache[0] = 1
+        
+        # It matters how you fill up:
+        # Must use one coin at a time
+
+        # Not this way
+        # for amountI in range(1, amount + 1):
+        #     for coin in coins:
+        #         if amountI >= coin:
+        #             cache[amountI] += cache[amountI - coin]
+
+        # This way
+        # for coin in coins:
+        #     for amountI in range(coin, amount + 1):
+        #         cache[amountI] += cache[amountI - coin]
+        return cache[-1]
